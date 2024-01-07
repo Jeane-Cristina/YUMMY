@@ -1,0 +1,12 @@
+.menu{
+    min-height: 300px;
+    max-height: 375px;
+    flex-grow: 1;
+    padding: 2% ;
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    inset: 0;
+    
+}
