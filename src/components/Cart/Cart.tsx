@@ -80,13 +80,13 @@ export default function Cart(){
             <div className={styles.address}>
                 <div className={styles.fields}>
                     <span>CEP</span>
-                    <input maxLength={8} value={zipcode} placeholder='Digite o CEP...' onChange={(e)=>{handleZipCode(e);}} />
+                    <input className={styles.field__zipcode} maxLength={8} value={zipcode} placeholder='Digite o CEP...' onChange={(e)=>{handleZipCode(e);}} />
                 </div>
                 {(address?.street && address.district) && (
                     <React.Fragment>
                         <div className={styles.fields}><span>RUA</span><span>{address.street}</span></div>
                         <div className={styles.fields}><span>BAIRRO</span><span>{address.district}</span></div>
-                        <div className={styles.fields}><span>NÚMERO</span><input maxLength={4} placeholder='Digite o número...'/></div>
+                        <div className={styles.fields}><span>NÚMERO</span><input maxLength={4} className={styles.field__zipcode} placeholder='Digite o número...'/></div>
                     </React.Fragment>
                 )}
                 

@@ -6,6 +6,7 @@
     justify-content: space-between;
     padding-left: 2%;
     padding-right: 2%;
+    cursor: default;
 }
 
 .plate{
@@ -18,6 +19,7 @@
 .plate label{
     color: #b3b3b3;
     font-size: 10px;
+    cursor: default;
 }
 
 
@@ -34,4 +36,5 @@
     align-items: center;
     color: #b3b3b3;
     font-size: 15px;
+    cursor: default;
 }

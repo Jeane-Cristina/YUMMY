@@ -10,6 +10,7 @@
     background-color: #fafaf8;
     border-radius: 20%;
     border: 2px solid #f2f2f1;
+    cursor: pointer;
 }
 
 .item span {
