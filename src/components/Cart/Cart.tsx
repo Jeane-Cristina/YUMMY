@@ -62,8 +62,8 @@ export default function Cart(){
             <div className={styles.order__items} ref={ordersRef}>
                 {items.length > 0 && (
                     <React.Fragment>
-                        {items.map((item, index) => (
-                            <OrderItem index={index} 
+                        {items.map((item) => (
+                            <OrderItem key={item.index} index={item.index} 
                                 image={item.itemPicture} 
                                 quantity={item.quantity} 
                                 name={item.name} 

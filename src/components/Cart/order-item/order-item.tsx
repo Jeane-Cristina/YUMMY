@@ -1,5 +1,7 @@
 import { CSSProperties } from 'react';
 import styles from './order-item.module.css';
+import { BsTrashFill } from "react-icons/bs";
+import { useCartContext } from '../../../contexts/cart/CartContext';
 
 type OrderItemProps = {
     index: number;
@@ -13,6 +15,13 @@ export default function OrderItem({ index, image, quantity, name, price } : Orde
 
     const adjustStylesImage: CSSProperties ={
         backgroundImage: `url(${image})`
+    
+    }
+
+    const { handleRemoveItem } = useCartContext();
+
+    function handleRemoveOption(){
+        handleRemoveItem(index, 1);
     }
 
     return (
@@ -22,6 +31,7 @@ export default function OrderItem({ index, image, quantity, name, price } : Orde
                 <span>{quantity} <label>X</label> {name}</span>
             </div>
             <div className={styles.price}>R$ {price}</div>
+            <div className={styles.dump}><BsTrashFill onClick={handleRemoveOption} /></div>
         </div>
     )
 }
