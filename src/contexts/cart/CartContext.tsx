@@ -32,7 +32,7 @@ export const CartContextProvider: React.FC<CartContextProviderProps> = ({ childr
                 itemPicture: itemPicture,
                 quantity: quantity,
             };
-    
+            
             setItems((prevItems) => {
                 return [...prevItems, item];
             });
@@ -41,7 +41,17 @@ export const CartContextProvider: React.FC<CartContextProviderProps> = ({ childr
     }
 
     function handleRemoveItem(index:number, quantity: number){
-        
+        const updatedListItems = items.map((item) => {
+            if(item.index === index){
+                item.quantity -= quantity;
+                item.totalPrice = item.quantity*item.price;
+            }
+            return item;
+        });
+
+        const deleteItem = updatedListItems.filter((item) => { return item.quantity != 0; });
+
+        setItems(deleteItem);
     }
 
     return (
